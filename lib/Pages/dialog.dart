@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/Pages/todopage.dart';
 
 class DialogTodo extends StatefulWidget {
   const DialogTodo({super.key});
@@ -8,12 +9,11 @@ class DialogTodo extends StatefulWidget {
 }
 
 class _DialogTodoState extends State<DialogTodo> {
-  Map data = {"Task": "", "Time": "", "Dropdown": "AT HOME" ,"Changed":false} ;
+  Map data = {"Task": "", "Time": "", "Dropdown": "AT HOME", "Changed": false};
   @override
   Widget build(BuildContext context) {
     List option = ["AT OFFICE", "AT HOME", "AWAY"];
     return AlertDialog(
-      
       title: const Text("Add Task"),
       content: const Text("Add the Task for the List"),
       actions: [
@@ -24,7 +24,7 @@ class _DialogTodoState extends State<DialogTodo> {
               data["Task"] = value;
               data['Time'] =
                   "${DateTime.now().hour}:${DateTime.now().minute}:${DateTime.now().second}";
-              data['Changed']=true;
+              data['Changed'] = true;
               // data = {
               //   "Task": value,
               //   "Time":

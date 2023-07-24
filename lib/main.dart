@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/Pages/foremploy.dart';
 import 'package:todoapp/Pages/todopage.dart';
 import 'dart:async';
 
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: "Todo App1",
+      title: "Todo App",
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => const FirstPage(),
         "/todo": (context) => const TodoList(),
+        "/emp": (context) => const Employee(),
       },
     );
   }
@@ -36,7 +38,7 @@ class _FirstPageState extends State<FirstPage> {
   @override
   void initState() {
     super.initState();
-    var duration = const Duration(milliseconds: 1000);
+    var duration = const Duration(seconds: 1);
     Timer(
       duration,
       () => Navigator.pushReplacementNamed(context, '/todo'),
